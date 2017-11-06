@@ -1,37 +1,31 @@
-## Welcome to GitHub Pages
+## Welcome to AJURO Unified API Server
 
-You can use the [editor on GitHub](https://github.com/profimedica/UnifiedAPI/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+Your compani developed over time multiple servers for multiple clients.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Unfortunately, every API designer implemented a new protocol.
 
-### Markdown
+Now you are developing a new client and you have plans for a new API.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+But wait! What if you can benefit from all existent APIs !? In all clients, yes.
 
-```markdown
-Syntax highlighted code block
+### The benefits of a Unified API Server
 
-# Header 1
-## Header 2
-### Header 3
+Imagine the benefits of this Unified API Server: 
 
-- Bulleted
-- List
+  Implements client authentification only one time (one language, one entry point);
 
-1. Numbered
-2. List
+  Review one single log file for all clients;
 
-**Bold** and _Italic_ and `Code` text
+  Make data available between clients without touching the underlaying layers;
+  
+  Ignore bad design practices in underlaying APIs
+  
+  Update your code once to provide a new functionality for all clients
+  
+### Best practices to use when developing an API protocol
 
-[Link](url) and ![Image](src)
-```
+1) Protocol should NOT be aware of the location, type or structure of storage. Only the resource identifier.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+2) Protocol should optionally inform the client on what data can be ignored for better performance. But server will decide over this.
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/profimedica/UnifiedAPI/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+3) Protocol can specify preffered source, api version to use and formatting options.
